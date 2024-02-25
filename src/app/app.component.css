@@ -1,0 +1,6 @@
+.container {
+  display: flex;
+  justify-content: center; /* Tengahkan secara horizontal */
+  align-items: center; /* Tengahkan secara vertikal */
+  height: 100vh; /* Atur tinggi container sesuai kebutuhan */
+}
