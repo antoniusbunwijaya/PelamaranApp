@@ -1,0 +1,129 @@
+<div class="container">
+  <div class="form-container">
+    <h1>Data Pelamar</h1>
+    <form ngForm>
+      <mat-form-field class="example-full-width">
+        <mat-label>Nama Lengkap</mat-label>
+        <input matInput name="fullName" ngModel required placeholder="Antonius Bun Wijaya">
+        @if (fullName.invalid) {
+          <mat-error>{{ getErrorMessage('fullName') }}</mat-error>
+        }
+        <mat-icon matSuffix>mode_edit</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Nomor Identifikasi</mat-label>
+        <input matInput name="identificationNumber" ngModel required placeholder="KTP / SIM / NIK">
+        <mat-icon matSuffix>mode_edit</mat-icon>
+        @if (identificationNumber.invalid) {
+          <mat-error>{{ getErrorMessage('identificationNumber') }}</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Nomor Telepon</mat-label>
+        <span matTextPrefix>+62 &nbsp;</span>
+        <input matInput name="identificationNumber" ngModel required placeholder="85849581088">
+        <mat-icon matSuffix>mode_edit</mat-icon>
+        @if (phoneNumber.invalid) {
+          <mat-error>{{ getErrorMessage('phoneNumber') }}</mat-error>
+        }
+      </mat-form-field>
+
+
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Alamat Email</mat-label>
+        <input matInput name="email" placeholder="antonius@example.com" ngModel required>
+        <mat-icon matSuffix>mode_edit</mat-icon>
+        @if (email.invalid) {
+          <mat-error>{{ getErrorMessage('email') }}</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Tempat Lahir</mat-label>
+        <input matInput name="placeOfBirth" ngModel required placeholder="Pangkalan Bun">
+        <mat-icon matSuffix>mode_edit</mat-icon>
+        @if (placeOfBirth.invalid) {
+          <mat-error>{{ getErrorMessage('placeOfBirth') }}</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Tanggal Lahir</mat-label>
+        <input matInput name="dateOfBirth" ngModel [matDatepicker]="picker" required placeholder="2/26/2024">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        @if (dateOfBirth.invalid) {
+          <mat-error>{{ getErrorMessage('dateOfBirth') }}</mat-error>
+        }
+      </mat-form-field>
+
+<!--      <mat-form-field class="example-full-width">-->
+<!--        <mat-label>Tanggal Lahir</mat-label>-->
+<!--        <input name="dateOfBirth" ngModel required placeholder="2/26/2024">-->
+<!--        <mat-hint>MM/DD/YYYY</mat-hint>-->
+<!--        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>-->
+<!--        <mat-datepicker #picker></mat-datepicker>-->
+<!--        @if (dateOfBirth.invalid) {-->
+<!--          <mat-error>{{ getErrorMessage('dateOfBirth') }}</mat-error>-->
+<!--        }-->
+<!--      </mat-form-field>-->
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Kebangsaan</mat-label>
+        <input matInput name="nationality" ngModel required placeholder="Indonesia">
+        <mat-icon matSuffix>mode_edit</mat-icon>
+        @if (nationality.invalid) {
+          <mat-error>{{ getErrorMessage('nationality') }}</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Agama</mat-label>
+        <input matInput name="religion" ngModel required placeholder="Kristen / Islam / Buddha / Hindu / Konghocu">
+        <mat-icon matSuffix>mode_edit</mat-icon>
+        @if (religion.invalid) {
+          <mat-error>{{ getErrorMessage('religion') }}</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Jenis Kelamin</mat-label>
+        <mat-select name="gender" ngModel required>
+          <mat-option value="Laki-Laki">Laki-Laki</mat-option>
+          <mat-option value="Perempuan">Perempuan</mat-option>
+        </mat-select>
+        @if (gender.invalid) {
+          <mat-error>{{ getErrorMessage('gender') }}</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Status Pernikahan</mat-label>
+        <mat-select name="maritalStatus" ngModel required>
+          <mat-option value="Sudah Menikah">Sudah Menikah</mat-option>
+          <mat-option value="Belum Menikah">Belum Menikah</mat-option>
+        </mat-select>
+        @if (maritalStatus.invalid) {
+          <mat-error>{{ getErrorMessage('maritalStatus') }}</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Masukan Alamat</mat-label>
+        <textarea matInput name="address" ngModel required placeholder="Lebak Jaya, Tambahksari, Surabaya, Jawa Timur"></textarea>
+        <mat-icon matSuffix>location_on</mat-icon>
+        @if (address.invalid) {
+          <mat-error>{{ getErrorMessage('address') }}</mat-error>
+        }
+      </mat-form-field>
+
+      <br>
+      <button mat-raised-button color="primary">Kirim</button>
+    </form>
+  </div>
+</div>
+
